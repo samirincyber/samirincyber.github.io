@@ -34,7 +34,7 @@ h2 {
   margin: auto;
 }
 
-.card {
+.card {ion
   background-color: #1e293b;
   padding: 20px;
   margin-top: 20px;
@@ -78,11 +78,12 @@ footer {
 <div class="card">
   <ul>
     <li>Linux Log Analysis (auth.log, auditd, journalctl)</li>
+    <li>Network & Packet Analysis</li>
     <li>Elastic Stack & SIEM Detection</li>
-    <li>Azure Cloud Monitoring</li>
     <li>MITRE ATT&CK Mapping</li>
     <li>Zeek & Suricata Network Analysis</li>
     <li>Python Security Automation</li>
+    <li>Linux command Line and Bash automation</li> 
   </ul>
 </div>
 
@@ -94,13 +95,20 @@ footer {
 </div>
 
 <div class="card">
-  <h3>MITRE ATT&CK Detection Engineering</h3>
-  <p>Mapped attack techniques to ATT&CK and built detection rules with reduced false positives.</p>
+  <h3>Raspberry Pi Honeypot Deployment</h3>
+  <p>
+  Deployed a honeypot service on a Raspberry Pi to simulate an exposed Linux system and observe real-world attacker behavior.
+  Monitored incoming brute-force attempts and analyzed command-line activity performed after login attempts.
+  </p>
 </div>
 
 <div class="card">
-  <h3>Azure Cloud SOC Lab</h3>
-  <p>Enabled Azure logging and created KQL detections for suspicious login activity and privilege changes.</p>
+  <h3>Detection Rules & Defensive Hardening</h3>
+  <p>
+  Analyzed attacker login patterns and command execution behavior to create detection rules for repeated failed logins and suspicious shell activity.
+  Implemented defensive controls to block recurring IP addresses and reduce future attack attempts.
+  </p>
+</div>cious login activity and privilege changes.</p>
 </div>
 
 <div class="card">
