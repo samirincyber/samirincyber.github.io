@@ -6,143 +6,194 @@
 <title>Zuber Kariye | Cybersecurity Portfolio</title>
 
 <style>
-body {
+:root {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --accent: #38bdf8;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+}
+
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #0f172a;
-  color: #e2e8f0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  scroll-behavior: smooth;
 }
 
 header {
   text-align: center;
-  padding: 60px 20px;
+  padding: 80px 20px;
 }
 
-h1 {
-  font-size: 42px;
+header h1 {
+  font-size: 48px;
   margin-bottom: 10px;
 }
 
-h2 {
-  border-bottom: 2px solid #1e293b;
-  padding-bottom: 6px;
-  margin-top: 50px;
+header p {
+  color: var(--muted);
 }
 
-.container {
-  width: 90%;
+nav {
+  text-align: center;
+  padding: 15px;
+  background: #0b1220;
+  position: sticky;
+  top: 0;
+}
+
+nav a {
+  color: var(--accent);
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.section {
   max-width: 900px;
-  margin: auto;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+.section h2 {
+  margin-bottom: 20px;
+  border-bottom: 2px solid #1e293b;
+  padding-bottom: 10px;
 }
 
 .card {
-  background-color: #1e293b;
+  background: var(--card);
   padding: 25px;
-  margin-top: 20px;
   border-radius: 10px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
 ul {
   padding-left: 20px;
 }
 
-a {
-  color: #38bdf8;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
 footer {
   text-align: center;
   padding: 40px;
+  color: var(--muted);
   margin-top: 60px;
-  font-size: 14px;
-  color: #94a3b8;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>
 </head>
 
 <body>
 
+<nav>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
+
 <header>
   <h1>Zuber Kariye</h1>
-  <p><strong>Detection-Focused Cybersecurity Analyst</strong></p>
-  <p>Linux | Threat Hunting | SIEM | Network Monitoring</p>
+  <p>Detection-Focused Cybersecurity Analyst</p>
+  <p>Linux | Threat Hunting | SIEM | Honeypots</p>
 </header>
 
-<div class="container">
-
-<h2>About Me</h2>
-<div class="card">
-  <p>
-  I am a cybersecurity student focused on detection engineering and Linux-based threat monitoring.
-  I build hands-on lab environments to simulate real-world attacks, analyze logs, and create detection logic based on observed attacker behavior.
-  My approach emphasizes practical defense, investigation workflow, and continuous improvement of security controls.
-  </p>
+<div class="section fade-in" id="about">
+  <h2>About Me</h2>
+  <div class="card">
+    I build hands-on security labs focused on Linux threat detection and real-world attacker behavior analysis.
+    My work centers around log analysis, detection rule development, and defensive hardening.
+  </div>
 </div>
 
-<h2>Technical Skills</h2>
-<div class="card">
-  <ul>
-    <li>Linux log analysis (auth.log, journalctl, auditd)</li>
-    <li>Elastic Stack (Elasticsearch & Kibana)</li>
-    <li>Detection rule development</li>
-    <li>SSH brute-force monitoring</li>
-    <li>Firewall configuration & IP blocking</li>
-    <li>Raspberry Pi deployment</li>
-    <li>Python scripting for automation</li>
-    <li>Network traffic analysis (Zeek / Suricata)</li>
-  </ul>
+<div class="section fade-in" id="skills">
+  <h2>Technical Skills</h2>
+  <div class="card">
+    <ul>
+      <li>Linux log analysis (auth.log, journalctl, auditd)</li>
+      <li>Elastic Stack (Elasticsearch & Kibana)</li>
+      <li>Detection rule creation</li>
+      <li>SSH brute-force monitoring</li>
+      <li>Firewall & IP blocking</li>
+      <li>Raspberry Pi deployment</li>
+      <li>Network traffic analysis (Zeek / Suricata)</li>
+      <li>Python scripting</li>
+    </ul>
+  </div>
 </div>
 
-<h2>Featured Projects</h2>
+<div class="section fade-in" id="projects">
+  <h2>Featured Projects</h2>
 
-<div class="card">
-  <h3>Raspberry Pi Honeypot Deployment</h3>
-  <p>
-  Deployed a honeypot service on a Raspberry Pi to simulate an exposed Linux system.
-  Observed real-world brute-force attempts and analyzed attacker command-line activity after login attempts.
-  </p>
+  <div class="card">
+    <h3>Raspberry Pi Honeypot</h3>
+    Observed real brute-force attempts and analyzed attacker command-line behavior.
+  </div>
+
+  <div class="card">
+    <h3>Detection Rules & Hardening</h3>
+    Created detection logic for failed SSH attempts and implemented IP blocking mechanisms.
+  </div>
+
+  <div class="card">
+    <h3>Linux SOC Lab</h3>
+    Simulated attacker behavior using Kali and built detection queries in Elastic.
+  </div>
+
 </div>
 
-<div class="card">
-  <h3>Attacker Behavior Analysis</h3>
-  <p>
-  Investigated how automated bots and manual attackers enumerate systems using commands such as <code>whoami</code>, <code>uname -a</code>, and network discovery tools.
-  Reviewed authentication logs and command execution patterns to understand post-compromise behavior.
-  </p>
-</div>
-
-<div class="card">
-  <h3>Detection Rules & Defensive Hardening</h3>
-  <p>
-  Developed detection logic to identify repeated failed SSH login attempts and suspicious command activity.
-  Implemented firewall rules and IP blocking mechanisms to mitigate recurring attack sources and strengthen system security posture.
-  </p>
-</div>
-
-<div class="card">
-  <h3>Linux SOC Detection Lab</h3>
-  <p>
-  Built a controlled Ubuntu lab environment with Kali attacker simulation.
-  Ingested logs into Elastic Stack and created detection queries to identify brute-force behavior and abnormal system activity.
-  </p>
-</div>
-
-<h2>Contact</h2>
-<div class="card">
-  <p>GitHub: <a href="https://github.com/samirincyber">github.com/samirincyber</a></p>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/zuberkariye/">linkedin.com/in/zuberkariye</a></p>
-</div>
-
+<div class="section fade-in" id="contact">
+  <h2>Contact</h2>
+  <div class="card">
+    GitHub: <a href="https://github.com/samirincyber" style="color: var(--accent);">github.com/samirincyber</a><br>
+    LinkedIn: <a href="https://www.linkedin.com/in/zuberkariye/" style="color: var(--accent);">linkedin.com/in/zuberkariye</a>
+  </div>
 </div>
 
 <footer>
-  © 2026 Zuber Kariye | Cybersecurity Portfolio
+  © 2026 Zuber Kariye
 </footer>
+
+<script>
+const elements = document.querySelectorAll('.fade-in');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+});
+
+elements.forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
